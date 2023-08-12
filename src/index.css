@@ -1,69 +1,208 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+html,
 body {
+  cursor: none;
+  padding: 0;
   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "burtons";
+  src: url("./assets/images/Burtons.otf");
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: #25324b;
+  }
+}
+
+.animation-pulse {
+  box-shadow: 0 0 0 30px, rgba(210, 62, 62, 0.5);
+  transform: scale(0.7);
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.7);
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 1);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.5);
+  }
+
+  100% {
+    transform: scale(0.7);
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 1);
+  }
+}
+
+.card-zoom {
+  @apply relative flex items-center justify-center m-3 overflow-hidden shadow-xl w-80 h-40 sm:w-96 sm:h-52 md:w-60 md:h-32 lg:h-40 lg:w-52 2xl:w-64 rounded-t-2xl;
+}
+
+.card-zoom-image {
+  @apply absolute w-full h-full transition-all duration-500 ease-in-out transform hover:scale-150 bg-cover;
+}
+
+.card-zoom-text {
+  @apply absolute text-xl font-black transition-all duration-500 ease-in-out transform scale-150 text-gray-50 opacity-50;
+}
+
+.card-zoom:hover .card-zoom-image {
+  @apply scale-150;
+}
+.card-zoom:hover .card-zoom-text {
+  @apply scale-100;
+}
+
+.section-container {
+  @apply bg-gradient-to-b from-gray-100 dark:from-gray-800  dark:to-dark_sky_blue via-white to-white  rounded-2xl m-5 py-10;
+}
+
+@keyframes colors {
+  0% {
+    color: #57fffcdd;
+  }
+  25% {
+    color: #44c6c4;
+  }
+  50% {
+    color: #3197959b;
+  }
+  75% {
+    color: #44c6c4;
+  }
+  100% {
+    color: #57fffcdd;
+  }
+}
+
+@keyframes lightColors {
+  0% {
+    color: #29648a;
+  }
+  25% {
+    color: #26657e;
+  }
+  50% {
+    color: #5c8b9f;
+  }
+  75% {
+    color: #26657e;
+  }
+  100% {
+    color: #29648a;
+  }
+}
+
+
+.view-cursor {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.306);
+  position: fixed;
+  z-index: 11;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  transition-property: background, transform;
+  transform-origin: 50% 50%;
+  padding: 5px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.view-content {
+  display: none;
+  font-family: "burtons";
+  font-size: 14px;
+  font-weight: 600;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.custom-cursor {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1.5px solid rgb(0, 0, 0);
+  background-color: white;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  transition-property: background, transform;
+  transform-origin: 50% 50%;
+  /* transition-timing-function: ease-out; */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.click {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  z-index: 11;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  animation: cursorAnima 0.2s forwards;
+}
+
+.click::after {
+  width: 1rem;
+  height: 1rem;
+  border: 4px solid grey;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  border-radius: 50%;
+}
+
+@keyframes cursorAnima {
+  0% {
+    transform: scale(1);
   }
-  a:hover {
-    color: #747bff;
+  50% {
+    transform: scale(3);
   }
-  button {
-    background-color: #f9f9f9;
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
   }
+}
+
+.link-grow {
+  transform: scale(3.5);
+  border: 1px solid rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.045);
 }
