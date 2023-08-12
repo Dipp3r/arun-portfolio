@@ -16,6 +16,8 @@ import ssn_logo from "../../assets/images/ssnlogo.png";
 import menu from '../../assets/images/FLM_menu.gif';
 import gericare from '../../assets/images/gericare.gif';
 import finance from '../../assets/images/financeSimulator.mp4';
+import school from '../../assets/images/school.gif'; 
+import sunset from '../../assets/images/sunset.gif'; 
 
 
 
@@ -233,7 +235,7 @@ function Home() {
             <div className="px-4 items-center opacity-80 md:px-14 xl:px-48 2xl:px-96 bg-cover 2xl:py-40 py-8 w-full h-1/2  flex-col gap-y-20 md:flex-row justify-center md:gap-x-20 xl:gap-x-36 flex">
 
               <div className="relative h-1/2 min-w-[200px] max-w-[500px]">
-                <div className="absolute md:h-full -inset-0 bg-school opacity-100 rounded-lg lg:w-full"></div>
+                <div className="absolute md:h-full -inset-0 opacity-100 rounded-lg lg:w-full" style={{ backgroundImage: `url(${school})`}}></div>
                 <div className="relative justify-start backdrop-blur-sm  brightness-110  rounded-md w-full shadow-2xl dark:shadow-none md:h-full">
                   <div className=" p-0 w-full h-full rounded-t-md backdrop-blur-md bg-white/60 shadow-xl">
                     <div className="justify-center animate-pulse  flex space-x-4">
@@ -282,7 +284,7 @@ function Home() {
               </div>
 
               <div className="relative h-full min-w-[200px] max-w-[500px]">
-                <div className="absolute md:h-full -inset-0 bg-sunset opacity-100 rounded-lg  lg:w-full"></div>
+                <div className="absolute md:h-full -inset-0 opacity-100 rounded-lg  lg:w-full" style={{ backgroundImage: `url(${sunset})`}}></div>
                 <div className="relative justify-start backdrop-blur-sm shadow-2xl dark:shadow-none rounded-md w-full md:h-full">
                   <div className="p-0 w-full h-full rounded-t-md backdrop-blur-md bg-white/60 shadow-xl">
                     <div className="justify-center animate-pulse flex space-x-4">
