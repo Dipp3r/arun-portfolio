@@ -879,7 +879,7 @@ function Home() {
               <AiFillMail />
             </a>
             <a
-              href=""
+              href="https://www.linkedin.com/in/aruneeswaran-k-b34a08265/"
               className="text-linkdin_blue dark:text-gray-200 shadow-md hover:scale-110 transition transform duration-500"
             >
               <AiFillLinkedin />
