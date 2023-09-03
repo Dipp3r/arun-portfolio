@@ -12,7 +12,7 @@ export default {
           school: "url('../src/assets/images/school.gif')",
           sunset: "url('../src/assets/images/sunset.gif')",
           code_gif: "url('../src/assets/images/LightHouse.gif')",
-          "web2": "url('../src/assets/images/weathered_golden_monkey.png')",
+          "web2": "url('https://github.com/Dipp3r/arun-portfolio/assets/91364256/c95346a1-f7de-4ddb-bdb4-c883d6d97f9e')",
           web2_gif: "url('../src/assets/images/luminescene_gif.gif')",
           "web3": "url('../src/assets/images/monkey.png')",
           web3_gif: "url('../src/assets/images/suzanne_gif.gif')",
